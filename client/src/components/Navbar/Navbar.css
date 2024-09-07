@@ -1,0 +1,39 @@
+/* Optimized CSS */
+
+.airbnb-navbar {
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  max-width: 900px;
+  padding: 10px 30px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .form-group {
+  flex-grow: 1;
+}
+
+.search-bar input::placeholder {
+  color: #333;
+}
+
+.search-button {
+  background-color: #ff385c;
+  border-color: #ff385c;
+}
+
+.search-button:hover {
+  background-color: #ff586c;
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+}
+
+.navbar-nav .nav-link i {
+  font-size: 20px;
+}
