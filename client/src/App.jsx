@@ -5,12 +5,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AirbnbNavbar from './components/Navbar/Navbar';
 import IconMenu from './components/IconMenu/IconMenu';
+import CardComponent from './components/Card/Card';
+import Catalog from './pages/Catalog';
 
 function App() {
   return (
     <>
       <AirbnbNavbar />
       <IconMenu />
+      <Catalog />
     </>
   );
 }
