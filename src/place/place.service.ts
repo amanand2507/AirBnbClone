@@ -7,20 +7,20 @@ import { strict } from 'assert';
 @Injectable()
 export class PlaceService {
   constructor(@InjectModel(Place.name) private placeModel: Model<Place>) {}
-  async create(Place: any) {
+  async create(Place: any, user: string) {
     const newPlace = new this.placeModel({
       ...Place,
-      owner: '1',
+      owner: user,
     });
     return newPlace.save();
   }
 
   async findAll() {
-    return this.placeModel.find().exec();
+    return this.placeModel.find().populate('owner', 'username').exec();
   }
 
   async findOne(id: string) {
-    return this.placeModel.findById(id).exec();
+    return this.placeModel.findById(id).populate('owner', 'username').exec();
   }
 
   async update(id: string, Place: any) {

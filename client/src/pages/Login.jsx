@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Form, Button, Row, Col, Container } from 'react-bootstrap';
 
@@ -13,11 +14,23 @@ const AirbnbLogin = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Submit the email and password to your backend
-    console.log('Email:', email);
-    console.log('Password:', password);
+    try {
+      const response = await axios.post('http://localhost:3000/auth/login', {
+        username: email,
+        password,
+      });
+      if (response?.data?.access_token) {
+        localStorage.setItem('token', response.data.access_token);
+        setEmail('');
+        setPassword('');
+        window.alert('You are logged in ');
+        window.location = '/';
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -26,10 +39,10 @@ const AirbnbLogin = () => {
       <Form onSubmit={handleSubmit}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Email</Form.Label>
+            <Form.Label>Username</Form.Label>
             <Form.Control
-              type="email"
-              placeholder="Enter email"
+              type="username"
+              placeholder="Enter username"
               value={email}
               onChange={handleEmailChange}
             />

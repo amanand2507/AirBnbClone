@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Form, Button, Row, Col, Container } from 'react-bootstrap';
 
@@ -23,13 +24,31 @@ const AirbnbSignup = () => {
     setName(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Submit the email, password, confirm password, and name to your backend
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Confirm Password:', confirmPassword);
-    console.log('Name:', name);
+    if (password != confirmPassword) {
+      window.alert('Password does not match');
+      return;
+    }
+
+    try {
+      const response = await axios.post('http://localhost:3000/auth/signup', {
+        username: name,
+        password,
+        email,
+      });
+      if (response) {
+        setEmail('');
+        setPassword('');
+        setName('');
+        setConfirmPassword('');
+        window.alert('You are Signed Up, Continue to Login ');
+        window.location = '/login';
+      }
+    } catch (error) {
+      console.log(error);
+      window.alert('Error while signup');
+    }
   };
 
   return (
@@ -38,10 +57,10 @@ const AirbnbSignup = () => {
       <Form onSubmit={handleSubmit}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridName">
-            <Form.Label>Name</Form.Label>
+            <Form.Label>UserName</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter name"
+              placeholder="Enter username"
               value={name}
               onChange={handleNameChange}
             />

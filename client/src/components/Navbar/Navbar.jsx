@@ -13,6 +13,8 @@ import './Navbar.css';
 import logo from '../../assets/logo/long-logo.png';
 import { Link, NavLink } from 'react-router-dom';
 
+const isLoggedIn = localStorage.getItem('token');
+
 const AirbnbNavbar = () => {
   return (
     <Stack>
@@ -48,12 +50,32 @@ const AirbnbNavbar = () => {
                   <i className="bi bi-person-circle"></i>
                 </Dropdown.Toggle>
                 <Dropdown.Menu align={'start'}>
-                  <Dropdown.Item as={NavLink} to="/login">
-                    Login
-                  </Dropdown.Item>
-                  <Dropdown.Item as={NavLink} to="/signup">
-                    Signup
-                  </Dropdown.Item>
+                  {!isLoggedIn && (
+                    <>
+                      <Dropdown.Item as={NavLink} to="/login">
+                        Login
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/signup">
+                        Signup
+                      </Dropdown.Item>
+                    </>
+                  )}
+                  {isLoggedIn && (
+                    <>
+                      <Dropdown.Item
+                        as={NavLink}
+                        onClick={() => {
+                          localStorage.removeItem('token');
+                          window.location.reload();
+                        }}
+                      >
+                        Logout
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/profile">
+                        Profile
+                      </Dropdown.Item>
+                    </>
+                  )}
                 </Dropdown.Menu>
               </Dropdown>
             </Nav.Link>

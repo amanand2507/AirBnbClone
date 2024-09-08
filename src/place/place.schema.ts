@@ -3,8 +3,8 @@ import { Document, Types } from 'mongoose';
 
 @Schema()
 export class Place extends Document {
-  @Prop()
-  owner: string;
+  @Prop({ type: Types.ObjectId, ref: 'User', required: true })
+  owner: Types.ObjectId;
   @Prop()
   title: string;
   @Prop()
