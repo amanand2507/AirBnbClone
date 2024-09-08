@@ -7,7 +7,7 @@ import AirbnbNavbar from './components/Navbar/Navbar';
 import IconMenu from './components/IconMenu/IconMenu';
 import CardComponent from './components/Card/Card';
 import Catalog from './pages/Catalog';
-import Footer from './components/Footer/footer';
+import Footer from './components/Footer/Footer';
 import Footer2 from './components/Footer/Footer2';
 import AirbnbLogin from './pages/Login';
 import AirbnbSignup from './pages/Signup';
