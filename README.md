@@ -1,85 +1,150 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Airbnb Clone Project
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This is a full-stack **Airbnb Clone** application built using **NestJS** for the backend and **Vite + React** for the frontend. The app replicates core functionalities of Airbnb, including listings, bookings, user authentication, and more.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<div align="center">
+  <img src="https://img.shields.io/badge/NestJS-v9.0-red?style=for-the-badge&logo=nestjs" alt="NestJS"> 
+  <img src="https://img.shields.io/badge/Vite-v3.0-blueviolet?style=for-the-badge&logo=vite" alt="Vite"> 
+  <img src="https://img.shields.io/badge/React-18.0-blue?style=for-the-badge&logo=react" alt="React"> 
+  <img src="https://img.shields.io/badge/MongoDB-Atlas-brightgreen?style=for-the-badge&logo=mongodb" alt="MongoDB Atlas"> 
+</div>
 
-## Description
+## Live Demo
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- **Frontend**: [Airbnb Clone Frontend](https://air-bnb-clone-aman-anands-projects-c29ea48c.vercel.app/)
+- **Backend**: [Airbnb Clone Backend](https://airbnbclone-8twl.onrender.com/)
+- **Postman Collection**: [Postman API Documentation](https://documenter.getpostman.com/view/37574505/2sAXjRWps2)
 
-## Project setup
+## Tech Stack
+
+| **Backend**        | **Frontend**  | **Database**  | **Tools**          |
+| ------------------ | ------------- | ------------- | ------------------ |
+| NestJS             | Vite          | MongoDB Atlas | Postman API Docs   |
+| MongoDB (Mongoose) | React         |               | JWT Authentication |
+| JWT Authentication | Bootstrap CSS |               |                    |
+
+---
+
+## Features
+
+- **User Authentication**: Register, login, and authentication using JWT tokens.
+- **Property Listings**: Browse all available property listings with detailed descriptions and images.
+
+## Screenshots
+
+| Home                         | Property Catalog                |
+| ---------------------------- | ------------------------------- |
+| ![Home](./screenshots/1.png) | ![Catalog](./screenshots/2.png) |
+
+| Login Page                    | Signup Page                    |
+| ----------------------------- | ------------------------------ |
+| ![Login](./screenshots/4.png) | ![Signup](./screenshots/5.png) |
+
+---
+
+## Installation
+
+### Prerequisites
+
+Ensure that you have the following installed:
+
+- **Node.js** (>=14.x)
+- **npm** or **yarn**
+- **MongoDB** (Local or MongoDB Atlas)
+
+### Clone the Repository
 
 ```bash
-$ npm install
+git clone https://github.com/amanand2507/AirBnbClone.git
+cd airbnb-clone
 ```
 
-## Compile and run the project
+### Backend Setup
 
-```bash
-# development
-$ npm run start
+1. Navigate to the backend directory:
 
-# watch mode
-$ npm run start:dev
+   ```bash
+   cd backend
+   ```
 
-# production mode
-$ npm run start:prod
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the backend directory with the following content:
+
+   ```bash
+   MONGO_URL=your-mongodb-connection-string
+   ```
+
+4. Run the backend server:
+
+   ```bash
+   npm run start
+   ```
+
+   The backend API will be running at `http://localhost:3000`.
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+
+   ```bash
+   cd client
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the frontend directory with the following content:
+
+   ```bash
+   VITE_BACKEND_URL=https://airbnbclone-8twl.onrender.com
+   ```
+
+4. Run the frontend server:
+
+   ```bash
+   npm run dev
+   ```
+
+   The frontend will be running at `http://localhost:3000`.
+
+---
+
+## Usage
+
+Once both the frontend and backend servers are running, open your browser and access the application at `http://localhost:3000`.
+
+### Testing the API
+
+To test the API, you can use the provided Postman collection. Import the collection via the following link:
+
+- [Postman Collection](https://documenter.getpostman.com/view/37574505/2sAXjRWps2)
+
+---
+
+## Environment Variables
+
+### Frontend `.env`
+
+```env
+VITE_BACKEND_URL=https://airbnbclone-8twl.onrender.com
 ```
 
-## Run tests
+### Backend `.env`
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+```env
+MONGO_URL=your-mongodb-connection-string
 ```
 
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+---
 
 ## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+This project is licensed under the MIT License.
