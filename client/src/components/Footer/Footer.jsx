@@ -1,5 +1,26 @@
 import React from 'react';
 import { Container, Row, Col, Nav, NavItem } from 'react-bootstrap';
+import './Footer.css';
+
+const itemList = [
+  { title: 'Canmore', description: 'Pet-friendly rentals' },
+  { title: 'Benalmádena', description: 'Flat rentals' },
+  { title: 'Marbella', description: 'Flat rentals' },
+  { title: 'Mijas', description: 'Cottage rentals' },
+  { title: 'Prescott', description: 'Pet-friendly rentals' },
+  { title: 'Scottsdale', description: 'Flat rentals' },
+  { title: 'Tucson', description: 'Flat rentals' },
+  { title: 'Jasper', description: 'Cabin rentals' },
+  { title: 'Mountain View', description: 'Pet-friendly rentals' },
+  { title: 'Devonport', description: 'Cottage rentals' },
+  { title: 'Mallacoota', description: 'Pet-friendly rentals' },
+  { title: 'Ibiza', description: 'Holiday rentals' },
+  { title: 'Anaheim', description: 'Family-friendly rentals' },
+  { title: 'Monterey', description: 'Flat rentals' },
+  { title: 'Paso Robles', description: 'House rentals' },
+  { title: 'Santa Barbara', description: 'Beachfront rentals' },
+  { title: 'Sonoma', description: 'Pet-friendly rentals' },
+];
 
 const Footer = () => {
   return (
@@ -7,7 +28,7 @@ const Footer = () => {
       <Container>
         <h5>Inspiration for future getaways</h5>
         <Nav variant="tabs" defaultActiveKey="/popular">
-          <NavItem>
+          <NavItem className="px-2">
             <Nav.Link eventKey="popular" href="/popular">
               Popular
             </Nav.Link>
@@ -50,127 +71,32 @@ const Footer = () => {
         </Nav>
 
         <Row className="pt-4">
-          <Col xs={6} sm={3}>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Canmore</strong>
-              </li>
-              <li>Flat rentals</li>
-            </ul>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Tucson</strong>
-              </li>
-              <li>Rentals with pools</li>
-            </ul>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Anaheim</strong>
-              </li>
-              <li>House rentals</li>
-            </ul>
-          </Col>
-          <Col xs={6} sm={3}>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Benalmádena</strong>
-              </li>
-              <li>Flat rentals</li>
-            </ul>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Jasper</strong>
-              </li>
-              <li>Cabin rentals</li>
-            </ul>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Monterey</strong>
-              </li>
-              <li>Cabin rentals</li>
-            </ul>
-          </Col>
-          <Col xs={6} sm={3}>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Marbella</strong>
-              </li>
-              <li>Beachfront rentals</li>
-            </ul>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Mountain View</strong>
-              </li>
-              <li>Cabin rentals</li>
-            </ul>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Paso Robles</strong>
-              </li>
-              <li>Cottage rentals</li>
-            </ul>
-          </Col>
-          <Col xs={6} sm={3}>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Mijas</strong>
-              </li>
-              <li>House rentals</li>
-            </ul>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Devonport</strong>
-              </li>
-              <li>Cottage rentals</li>
-            </ul>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Santa Barbara</strong>
-              </li>
-              <li>Beach house rentals</li>
-            </ul>
+          {itemList.map((item) => {
+            return (
+              <FooterItem title={item.title} description={item.description} />
+            );
+          })}
+          <Col>
+            <div className="pt-3 text-right">
+              <a href="/more">Show more</a>
+            </div>
           </Col>
         </Row>
-        <Row className="pt-4">
-          <Col xs={6} sm={3}>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Prescott</strong>
-              </li>
-              <li>Cabin rentals</li>
-            </ul>
-          </Col>
-          <Col xs={6} sm={3}>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Mallacoota</strong>
-              </li>
-              <li>Pet-friendly rentals</li>
-            </ul>
-          </Col>
-          <Col xs={6} sm={3}>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Ibiza</strong>
-              </li>
-              <li>Holiday rentals</li>
-            </ul>
-          </Col>
-          <Col xs={6} sm={3}>
-            <ul className="list-unstyled">
-              <li>
-                <strong>Sonoma</strong>
-              </li>
-              <li>Beach house rentals</li>
-            </ul>
-          </Col>
-        </Row>
-        <div className="pt-3 text-right">
-          <a href="/more">Show more</a>
-        </div>
       </Container>
     </footer>
   );
 };
 
 export default Footer;
+function FooterItem({ title = 'Demo', description = 'Demo Desc' }) {
+  return (
+    <Col xs={6} sm={3} md={2}>
+      <ul className="list-unstyled">
+        <li>
+          <strong>{title}</strong>
+        </li>
+        <li>{description}</li>
+      </ul>
+    </Col>
+  );
+}

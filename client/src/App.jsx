@@ -9,16 +9,24 @@ import CardComponent from './components/Card/Card';
 import Catalog from './pages/Catalog';
 import Footer from './components/Footer/footer';
 import Footer2 from './components/Footer/Footer2';
+import AirbnbLogin from './pages/login';
+import AirbnbSignup from './pages/Signup';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Navbar } from 'react-bootstrap';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <AirbnbNavbar />
-      <IconMenu />
-      <Catalog />
+
+      <Routes>
+        <Route path="/" element={<Catalog />} />
+        <Route path="/login" element={<AirbnbLogin />} />
+        <Route path="/signup" element={<AirbnbSignup />} />
+      </Routes>
       <Footer />
       <Footer2 />
-    </>
+    </BrowserRouter>
   );
 }
 

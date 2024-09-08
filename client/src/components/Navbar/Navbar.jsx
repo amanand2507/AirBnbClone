@@ -1,7 +1,17 @@
 import React from 'react';
-import { Navbar, Nav, Container, Button, Form, Stack } from 'react-bootstrap';
+import {
+  Navbar,
+  Nav,
+  Container,
+  Button,
+  Form,
+  Stack,
+  NavDropdown,
+  Dropdown,
+} from 'react-bootstrap';
 import './Navbar.css';
 import logo from '../../assets/logo/long-logo.png';
+import { Link, NavLink } from 'react-router-dom';
 
 const AirbnbNavbar = () => {
   return (
@@ -24,7 +34,7 @@ const AirbnbNavbar = () => {
           </Nav>
 
           {/* Right: Airbnb your home, Language, and Profile */}
-          <Nav className="ms-auto">
+          <Nav className="ms-auto mx-5">
             <Nav.Link href="#host" className="fw-bold">
               Airbnb your home
             </Nav.Link>
@@ -33,7 +43,19 @@ const AirbnbNavbar = () => {
             </Nav.Link>
             <Nav.Link href="#profile" className="d-flex align-items-center">
               <i className="bi bi-list mx-2"></i>
-              <i className="bi bi-person-circle"></i>
+              <Dropdown drop="start">
+                <Dropdown.Toggle as="a" className="d-flex align-items-center">
+                  <i className="bi bi-person-circle"></i>
+                </Dropdown.Toggle>
+                <Dropdown.Menu align={'start'}>
+                  <Dropdown.Item as={NavLink} to="/login">
+                    Login
+                  </Dropdown.Item>
+                  <Dropdown.Item as={NavLink} to="/signup">
+                    Signup
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             </Nav.Link>
           </Nav>
         </Container>
@@ -52,7 +74,7 @@ const AirbnbNavbar = () => {
               />
             </Form.Group>
             <Form.Group className="me-2 border-end">
-              <Form.Label className="fw-bold px-2">Check In</Form.Label>
+              <Form.Label className="fw-bold px-3">Check In</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Add dates"

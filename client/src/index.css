@@ -9,4 +9,19 @@
 
 body {
   font-family: AirBnb !important;
+  font-size: 0.9rem;
+}
+
+.fw-bold {
+  font-family: AirBnbBold;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.authButton {
+  background-color: #ff385c;
+  border-color: #ff385c;
 }

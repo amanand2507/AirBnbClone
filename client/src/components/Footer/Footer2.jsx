@@ -8,67 +8,67 @@ const Footer2 = () => {
         {/* First row with links */}
         <Row>
           <Col md={4}>
-            <h6 className="font-weight-bold">Support</h6>
+            <h6 className="fw-bold">Support</h6>
             <ul className="list-unstyled">
-              <li>
+              <li className="my-2">
                 <a href="#">Help Centre</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">AirCover</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">Anti-discrimination</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">Disability support</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">Cancellation options</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">Report neighbourhood concern</a>
               </li>
             </ul>
           </Col>
           <Col md={4}>
-            <h6 className="font-weight-bold">Hosting</h6>
+            <h6 className="fw-bold">Hosting</h6>
             <ul className="list-unstyled">
-              <li>
+              <li className="my-2">
                 <a href="#">Airbnb your home</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">AirCover for Hosts</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">Hosting resources</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">Community forum</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">Hosting responsibly</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">Join a free Hosting class</a>
               </li>
             </ul>
           </Col>
           <Col md={4}>
-            <h6 className="font-weight-bold">Airbnb</h6>
+            <h6 className="fw-bold">Airbnb</h6>
             <ul className="list-unstyled">
-              <li>
+              <li className="my-2">
                 <a href="#">Newsroom</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">New features</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">Careers</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">Investors</a>
               </li>
-              <li>
+              <li className="my-2">
                 <a href="#">Airbnb.org emergency stays</a>
               </li>
             </ul>
@@ -79,29 +79,29 @@ const Footer2 = () => {
         <hr />
 
         {/* Second row with copyright, links, and icons */}
-        <Row className="d-flex justify-content-between">
-          <Col md={6}>
+        <Row className="d-flex ">
+          <Col md={8}>
             <p className="mb-0">
               © 2024 Airbnb, Inc. · <a href="#">Privacy</a> ·{' '}
               <a href="#">Terms</a> · <a href="#">Sitemap</a> ·{' '}
               <a href="#">Company details</a>
             </p>
           </Col>
-          <Col md={6} className="text-md-right">
-            <a href="#" className="mr-3">
+          <Col md={4} className="d-flex justify-content-end">
+            <a href="#" className="mx-3">
               English (IN)
             </a>
-            <a href="#" className="mr-3">
+            <a href="#" className="mx-3">
               ₹ INR
             </a>
-            <a href="#" className="mr-3">
-              <i className="fab fa-facebook"></i>
+            <a href="#" className="mx-3">
+              <i className="bi bi-facebook"></i>
             </a>
-            <a href="#" className="mr-3">
-              <i className="fab fa-twitter"></i>
+            <a href="#" className="mx-3">
+              <i className="bi bi-twitter"></i>
             </a>
-            <a href="#">
-              <i className="fab fa-instagram"></i>
+            <a href="#" className="mx-3">
+              <i className="bi bi-instagram"></i>
             </a>
           </Col>
         </Row>

@@ -5,9 +5,10 @@
 }
 
 .search-bar {
-  max-width: 900px;
-  padding: 10px 30px;
+  max-width: 700px;
+  padding: 3px 20px;
   margin: 0 auto;
+  font-size: 0.8rem;
   border: 1px solid #ddd;
   border-radius: 50px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
@@ -17,8 +18,13 @@
   flex-grow: 1;
 }
 
+.search-bar input {
+  height: 20px;
+}
+
 .search-bar input::placeholder {
   color: #333;
+  font-size: 0.8rem;
 }
 
 .search-button {
@@ -26,6 +32,9 @@
   border-color: #ff385c;
 }
 
+.drop {
+  display: inline !important;
+}
 .search-button:hover {
   background-color: #ff586c;
 }

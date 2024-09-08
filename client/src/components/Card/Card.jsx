@@ -23,22 +23,23 @@ function CardComponent({
   };
 
   return (
-    <Card className="m-2 border-0">
+    <Card className="m-3 my-4 border-0">
       <Carousel activeIndex={index} onSelect={handleSelect}>
         {details.imgSrc.map((image, i) => (
           <Carousel.Item key={i}>
             <img
-              className="d-block w-100  rounded"
-              height="180px"
+              className="d-block w-100 rounded-4"
+              height="250px"
               src={image}
               alt={image}
             />
           </Carousel.Item>
         ))}
       </Carousel>
-      <Card.Body>
-        <div className="fs-6">{details.title}</div>
+      <Card.Body className="mx-0 px-0">
+        <div className="fs-6 fw-bold">{details.title}</div>
         <div className="fs-6">{details.desc}</div>
+        <div className="fs-6 fw-bold">{details.date}</div>
       </Card.Body>
     </Card>
   );
