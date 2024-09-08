@@ -32,11 +32,14 @@ const AirbnbSignup = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/auth/signup', {
-        username: name,
-        password,
-        email,
-      });
+      const response = await axios.post(
+        import.meta.env.VITE_BACKEND_URL + '/auth/signup',
+        {
+          username: name,
+          password,
+          email,
+        },
+      );
       if (response) {
         setEmail('');
         setPassword('');

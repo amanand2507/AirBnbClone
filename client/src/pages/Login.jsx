@@ -17,10 +17,13 @@ const AirbnbLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', {
-        username: email,
-        password,
-      });
+      const response = await axios.post(
+        import.meta.env.VITE_BACKEND_URL + '/auth/login',
+        {
+          username: email,
+          password,
+        },
+      );
       if (response?.data?.access_token) {
         localStorage.setItem('token', response.data.access_token);
         setEmail('');
@@ -29,6 +32,7 @@ const AirbnbLogin = () => {
         window.location = '/';
       }
     } catch (error) {
+      window.alert('Unable to login ');
       console.log(error);
     }
   };

@@ -9,7 +9,7 @@ export default function Catalog() {
   const [list, setList] = useState([]);
   const getList = async () => {
     try {
-      const data = await axios.get('http://localhost:3000/place');
+      const data = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/place`);
       console.log(data);
       setList(data?.data);
     } catch (error) {
